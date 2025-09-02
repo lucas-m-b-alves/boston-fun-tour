@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucas and Julia - Boston fun tour</title>
+  <style>
+    /* Background gradient and fun vibe */
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #4a0033;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-top: 1em;
+      text-shadow: 2px 2px #fff;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1.5em;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 1.3em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Floating flower emojis */
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 2em;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* RSVP form */
+    .rsvp {
+      margin: 3em auto;
+      max-width: 500px;
+      padding: 2em;
+      background: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp h2 {
+      margin-bottom: 1em;
+    }
+
+    .rsvp form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    .rsvp input, .rsvp select, .rsvp textarea {
+      padding: 0.7em;
+      border: 2px solid #ff69b4;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .rsvp button {
+      padding: 0.8em;
+      border: none;
+      border-radius: 10px;
+      background: #ff69b4;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .rsvp button:hover {
+      background: #e0559d;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Lucas and Julia - Boston fun tour 🌸</h1>
+  <div class="content">
+    <p>
+      Have you approved my reception in Belo Horizonte from the technical International 
+      Hotel Management standpoint?
+    </p>
+    <p>
+      This is your chance to get it all again, now closer to home!  
+      Same enthusiasm, better public transit. 🚋✨
+    </p>
+  </div>
+
+  <div class="rsvp">
+    <h2>RSVP 💌</h2>
+    <form onsubmit="alert('Thanks for your RSVP, Julia! 🌹'); return false;">
+      <input type="text" name="name" placeholder="Your name" required />
+      <select name="attendance" required>
+        <option value="">Will you join?</option>
+        <option value="yes">Yes, of course! 🎉</option>
+        <option value="maybe">Maybe, let’s see 🤔</option>
+        <option value="no">Not this time 😢</option>
+      </select>
+      <textarea name="message" rows="3" placeholder="Leave a message!"></textarea>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
+
+  <script>
+    // Generate floating flowers
+    const flowers = ["🌸", "🌹", "🌼", "💐", "🌺"];
+    for (let i = 0; i < 20; i++) {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+      flower.style.fontSize = (1 + Math.random() * 2) + "em";
+      document.body.appendChild(flower);
+    }
+  </script>
+</body>
+</html>
