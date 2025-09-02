@@ -109,7 +109,8 @@
 
   <div class="rsvp">
     <h2>RSVP 💌</h2>
-    <form onsubmit="alert('Thanks for your RSVP, Julia! 🌹'); return false;">
+    <form action="https://formspree.io/f/abcdxyz" method="POST" 
+      onsubmit="alert('Thanks for your RSVP, Julia! 🌹');">
       <input type="text" name="name" placeholder="Your name" required />
       <select name="attendance" required>
         <option value="">Will you join?</option>
@@ -119,8 +120,8 @@
       </select>
       <textarea name="message" rows="3" placeholder="Leave a message!"></textarea>
       <button type="submit">Send RSVP</button>
-    </form>
-  </div>
+  </form>
+</div>
 
   <script>
     // Generate floating flowers
@@ -137,3 +138,4 @@
   </script>
 </body>
 </html>
+
